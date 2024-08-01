@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image';
-import NaverMapIcon from '@/public/images/NaverMapIcon.webp';
+import NaverMapIcon from '@/public/images/naverMapIcon.webp';
 
 import classes from './moveMapApplication.module.css';
 

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import ScrollMotion from '@/component/scrollMotion';
-import FlowerSvg from '@/public/images/FlowerSvg.svg';
+import FlowerSvg from '@/public/images/flowerSvg.svg';
 import classes from './page.module.css';
 
 const BookQuote = () => {
