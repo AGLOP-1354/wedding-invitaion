@@ -1,0 +1,16 @@
+* {
+  color: #312C2D;
+}
+
+html {
+  font-size: 16px;
+
+  @media (min-width: 1024px) {
+    font-size: 32px;
+  }
+}
+
+body {
+  background: #FBFBFB;
+  margin: 0;
+}

@@ -1,0 +1,7 @@
+.Header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: calc((100svw - 40px) * 0.895);
+  margin-bottom: 16px;
+  max-width: 500px;
+}

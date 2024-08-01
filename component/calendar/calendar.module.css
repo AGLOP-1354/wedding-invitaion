@@ -1,0 +1,11 @@
+.Calendar {
+  margin: auto;
+}
+
+.dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-row-gap: 1rem;
+  width: calc((100svw - 40px) * 0.895);
+  max-width: 500px;
+}

@@ -1,0 +1,25 @@
+.BookQuote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.quote {
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.75rem;
+}
+
+.quoteSource {
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.imageContainer {
+  position: relative;
+  width: 1.2215625rem;
+  height: 3.061875rem;
+}

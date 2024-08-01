@@ -1,0 +1,19 @@
+.Footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 1.25rem;
+}
+
+.shareElementContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100svw - 40px);
+}
+
+.copyright {
+  color: #BEA5A5;
+  font-size: 0.625rem;
+}

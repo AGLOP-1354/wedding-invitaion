@@ -1,0 +1,20 @@
+.BankAccountNumber {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.image {
+  position: relative;
+  width: 1.088rem;
+  height: 2.967rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.75rem;
+  letter-spacing: 0.175rem;
+}

@@ -1,0 +1,11 @@
+.MoveMapApplication {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  flex: 1;
+  width: 100%;
+  font-size: 0.75rem;
+}

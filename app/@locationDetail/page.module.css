@@ -1,0 +1,56 @@
+.LocationDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.subTitle {
+  color: #CAB4B4;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 1.68px;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 2.8px;
+}
+
+.map {
+  width: calc(100svw - 40px);
+  max-width: 500px;
+  height: calc((100svw - 40px) * 0.609);
+  margin: auto;
+}
+
+.locationDetail {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.location {
+  line-height: 2rem;
+}
+
+.mapContainer {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mapAppContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F7F3F2;
+  height: 52px;
+}
