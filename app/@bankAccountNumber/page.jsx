@@ -1,6 +1,11 @@
 import Image from 'next/image';
 
 import ScrollMotion from "@/component/scrollMotion";
+import Dropdown from '@/component/dropdown';
+
+import {
+  GROOM_FAMILY_BANK_ACCOUNT, BRIDE_FAMILY_BANK_ACCOUNT,
+} from '@/constants/bankAccountNumberInfos';
 
 import classes from './page.module.css';
 
@@ -21,9 +26,21 @@ const BankAccountNumber = () => {
         <div className={classes.title}>마음 전하실 곳</div>
       </ScrollMotion>
 
-      TODO: 드롭다운 구현
-      <div>신랑측 계좌번호</div>
-      <div>신부측 계좌번호</div>
+      <div className={classes.bankAccountDropdowns}>
+        <ScrollMotion>
+          <Dropdown
+            title="신랑측 계좌번호"
+            bankAccountInfos={GROOM_FAMILY_BANK_ACCOUNT}
+          />
+        </ScrollMotion>
+
+        <ScrollMotion>
+          <Dropdown
+            title="신부측 계좌번호"
+            bankAccountInfos={BRIDE_FAMILY_BANK_ACCOUNT}
+          />
+        </ScrollMotion>
+      </div>
     </section>
   );
 };

@@ -1,11 +1,62 @@
 /* eslint-disable @next/next/no-img-element */
-import { IconPhoneFilled } from '@tabler/icons-react';
+'use client';
+
+import { useState } from 'react';
+import { IconPhoneFilled, IconMessageCircleFilled } from '@tabler/icons-react';
 
 import ScrollMotion from '@/component/scrollMotion';
+import Drawer from '@/component/drawer';
+import Divider from '@/component/divider';
+
+import {
+  GROOM_FAMILY, BRIDE_FAMILY
+} from '@/constants/family';
 
 import classess from './page.module.css';
 
+const CallRaw = ({ position, name, phoneNumber }) => {
+  const handleCall = () => {
+    window.location.href = `tel:+${phoneNumber}`;
+  };
+  const handleSMS = () => {
+    window.location.href = `sms:+${phoneNumber}`;
+  };
+
+  return (
+    <div className={classess.CallRow}>
+      <span className={classess.position}>{position}</span>
+      <span className={classess.name}>{name}</span>
+
+      <div className={classess.calls}>
+        <span className={classess.callPhone} onClick={handleCall}>
+          <IconPhoneFilled color='#BEA5A5' size={20} />
+        </span>
+        <span className={classess.callMessage} onClick={handleSMS}>
+          <IconMessageCircleFilled color='#BEA5A5' size={20} />
+        </span>
+      </div>
+    </div>
+  )
+}
+
+const CallBox = ({ familyInfos }) => {
+  return (
+    <div className={classess.CallBox}>
+      {familyInfos?.map(({ position, name, phoneNumber }) => (
+        <CallRaw
+          key={`${position}_${name}`}
+          position={position}
+          name={name}
+          phoneNumber={phoneNumber}
+        />
+      ))}
+    </div>
+  )
+};
+
+
 const SubWeddingImage = () => {
+  const [isCallDrawerOpened, setIsCallDrawerOpened] = useState(false);
   return (
     <section className={classess.SubWeddingImage}>
       <div className={classess.imageContainer}>
@@ -28,11 +79,23 @@ const SubWeddingImage = () => {
       </div>
 
       <ScrollMotion>
-        <button className={classess.callButton}>
+        <button className={classess.callButton} onClick={() => setIsCallDrawerOpened(true)}>
           <IconPhoneFilled color='#BEA5A5' size='1rem' />
           연락하기
         </button>
       </ScrollMotion>
+
+      <Drawer
+        isOpen={isCallDrawerOpened}
+        onClose={() => setIsCallDrawerOpened(false)}
+        title="연락하기"
+      >
+        <div className={classess.CallBoxContainer}>
+          <CallBox familyInfos={GROOM_FAMILY} />
+          <Divider />
+          <CallBox familyInfos={BRIDE_FAMILY} />
+        </div>
+      </Drawer>
     </section>
   )
 }

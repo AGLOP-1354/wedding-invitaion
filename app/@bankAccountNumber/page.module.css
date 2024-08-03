@@ -18,3 +18,10 @@
   line-height: 1.75rem;
   letter-spacing: 0.175rem;
 }
+
+.bankAccountDropdowns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}

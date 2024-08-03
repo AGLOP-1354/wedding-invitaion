@@ -5,10 +5,10 @@ import { IconLink } from '@tabler/icons-react';
 import classes from './shareLink.module.css';
 
 const ShareLink = () => {
-  const handleCopyLink = () => {
+  const handleCopyLink = async () => {
     const currentUrl = window.location.href;
 
-    navigator.clipboard.writeText(currentUrl);
+    await navigator.clipboard.writeText(currentUrl);
   };
 
   return (

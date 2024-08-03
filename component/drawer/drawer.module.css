@@ -1,0 +1,35 @@
+.Drawer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 24px);
+  background: #fff;
+  z-index: 1001;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(49, 44, 45, 0.50);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.825rem 1.25rem;
+  border-bottom: 1px solid #E7E0E0;
+}
+
+.title {
+  color: #BEA5A5;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}

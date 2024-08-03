@@ -4,6 +4,7 @@
   align-items: center;
   gap: 2rem;
   padding: 1.5rem 1.25rem;
+  width: calc(100svw - 40px);
 }
 
 .shareElementContainer {
