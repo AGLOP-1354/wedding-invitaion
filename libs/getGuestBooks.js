@@ -8,7 +8,7 @@ const getGuestBooks = async () => {
     cache: 'no-cache',
     next: {
       tags: ['allGuestBooks']
-    }
+    },
   });
 
   if (!response.ok) {
