@@ -57,3 +57,39 @@
   background: #BEA5A5;
   color: #fff;
 }
+
+.GuestBookBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 8px;
+  background: #FFF;
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.04);
+}
+
+.guestBookBoxHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.guestName {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.guestBookContents {
+  font-size: 0.875rem;
+}
+
+.guestBookCreatedAt {
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.guestBooks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: calc(100vw - 80px);
   height: 52px;
   padding: 0px 1.25rem;
   border-radius: 8px;
@@ -22,7 +22,7 @@
 }
 
 .content {
-  width: 100%;
+  width: calc(100vw - 80px);
   overflow: hidden;
   padding: 1.25rem;
   background-color: #fff;

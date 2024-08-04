@@ -4,6 +4,8 @@
   left: 0;
   width: 100vw;
   height: calc(100vh - 24px);
+  display: flex;
+  flex-direction: column;
   background: #fff;
   z-index: 1001;
   border-radius: 4px 4px 0px 0px;
@@ -32,4 +34,8 @@
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.75rem;
+}
+
+.article {
+  flex: 1;
 }

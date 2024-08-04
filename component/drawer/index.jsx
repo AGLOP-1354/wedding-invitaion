@@ -63,7 +63,7 @@ const Drawer = ({
           <IconX color="#BEA5A5" size={20} onClick={onClose} />
         </header>
 
-        <article>
+        <article className={classes.article}>
           {children}
         </article>
       </motion.div>
