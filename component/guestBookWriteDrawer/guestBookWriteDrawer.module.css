@@ -33,11 +33,13 @@
   height: 40px;
   border-radius: 4px;
   border: 1px solid #E7E0E0;
+  font-family: '__Gowun_Batang_343dc9', '__Gowun_Batang_Fallback_343dc9';
 }
 
 .textInput::placeholder {
   color: #AAA;
   font-size: 1rem;
+  font-family: '__Gowun_Batang_343dc9', '__Gowun_Batang_Fallback_343dc9';
 }
 
 .textareaInput {
@@ -47,11 +49,13 @@
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
   border: 1px solid #E7E0E0;
+  font-family: '__Gowun_Batang_343dc9', '__Gowun_Batang_Fallback_343dc9';
 }
 
 .textareaInput::placeholder {
   color: #AAA;
   font-size: 1rem;
+  font-family: '__Gowun_Batang_343dc9', '__Gowun_Batang_Fallback_343dc9';
 }
 
 .SubmitButton {
@@ -63,6 +67,7 @@
   color: #FFF;
   font-size: 1rem;
   line-height: 1.75rem;
+  font-family: '__Gowun_Batang_343dc9', '__Gowun_Batang_Fallback_343dc9';
 }
 
 .error {

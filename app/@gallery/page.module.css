@@ -97,6 +97,7 @@
   font-size: 1rem;
   line-height: 1.75rem;
   max-width: 300px;
+  font-family: '__Gowun_Batang_343dc9', '__Gowun_Batang_Fallback_343dc9';
 
   @media (min-width: 768px) {
     height: calc(300px * 0.208);

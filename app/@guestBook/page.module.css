@@ -53,9 +53,11 @@
   width: calc(100svw - 40px);
   height: 52px;
   border: none;
+  font-size: 1rem;
   border-radius: 8px;
   background: #BEA5A5;
   color: #fff;
+  font-family: '__Gowun_Batang_343dc9', '__Gowun_Batang_Fallback_343dc9';
 }
 
 .GuestBookBox {
