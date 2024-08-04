@@ -22,23 +22,14 @@ const ShareKakao = () => {
     window.Kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
-        title: '디자인 마스터',
-        description: '카카오톡 공유하기 예제',
+        title: '김태현 & 김기현 결혼합니다.',
+        description: '2024.10.12(토) 오후 17:00 고려대학교 교우회관 1층 고려스퀘어홀',
         imageUrl: 'https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/gallery1.jpeg',
         link: {
-          mobileWebUrl: 'https://google.com',
-          webUrl: 'https://google.com',
+          mobileWebUrl: 'https://wedding-invitaion-inky.vercel.app/',
+          webUrl: 'https://wedding-invitaion-inky.vercel.app/',
         },
       },
-      buttons: [
-        {
-          title: '웹으로 보기',
-          link: {
-            mobileWebUrl: 'https://google.com',
-            webUrl: 'https://google.com',
-          },
-        },
-      ],
     });
   };
 
