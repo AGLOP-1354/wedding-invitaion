@@ -12,7 +12,7 @@ const writeGuestBook = async (formData) => {
     guestName: formData.get('guestName'),
     password: formData.get('password'),
     contents: formData.get('contents'),
-    createdAt: dayjs().format('YYYY.MM.DD'),
+    createdAt: dayjs(),
   };
 
   const response = await fetch(`${defaultUrl}/api/guest-book`, {

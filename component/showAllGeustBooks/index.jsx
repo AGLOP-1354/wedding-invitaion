@@ -22,15 +22,19 @@ const ShowAllGuestBooks = ({ guestBooks }) => {
         <IconChevronRight size={16} color='#BEA5A5' />
       </button>
 
-      <Drawer
-        isOpen={isDrawerOpen}
-        onClose={() => setIsDrawerOpen(false)}
-        title="방명록 모두 보기"
-      >
-        <div className={classes.container}>
-          <GuestBooks guestBooks={guestBooks} />
-        </div>
-      </Drawer>
+      {
+        isDrawerOpen && (
+          <Drawer
+            isOpen={isDrawerOpen}
+            onClose={() => setIsDrawerOpen(false)}
+            title="방명록 모두 보기"
+          >
+            <div className={classes.container}>
+              <GuestBooks guestBooks={guestBooks} />
+            </div>
+          </Drawer>
+        )
+      }
     </section>
   );
 }
