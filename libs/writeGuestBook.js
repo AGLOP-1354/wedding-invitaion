@@ -20,7 +20,7 @@ const writeGuestBook = async (formData) => {
     body: JSON.stringify(guestBook),
   });
 
-revalidateTag('allGuestBooks');
+  revalidateTag('allGuestBooks');
 
   const result = await response.json();
   return result;

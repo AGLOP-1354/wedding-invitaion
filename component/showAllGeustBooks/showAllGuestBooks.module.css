@@ -1,0 +1,16 @@
+.moreButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  color: #BEA5A5;
+  background: transparent;
+  font-size: 0.875rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+}

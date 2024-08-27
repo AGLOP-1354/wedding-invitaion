@@ -6,15 +6,28 @@ import { IconPencilPlus, IconX } from '@tabler/icons-react';
 
 import ScrollMotion from "@/component/scrollMotion";
 import GuestBookWriteDrawer from '@/component/guestBookWriteDrawer';
+import deleteGuestBookById from '@/libs/deleteGeustBookById';
 
 import classes from './page.module.css';
 
-const GuestBookBox = ({ guestName, contents, createdAt }) => {
+const GuestBookBox = ({ _id, guestName, contents, createdAt, password }) => {
+  const createdAtToDate = typeof createdAt === 'string' ? new Date(createdAt) : createdAt;
+
+  const deleteGuestBook = () => {
+    const enteredPassword = prompt('비밀번호를 입력해주세요.');
+    if (!enteredPassword || String(password) !== String(enteredPassword)) {
+      alert('잘못된 비밀번호입니다.');
+      return;
+    }
+
+    deleteGuestBookById(_id);
+  };
+
   return (
     <div className={classes.GuestBookBox}>
       <div className={classes.guestBookBoxHeader}>
         <span className={classes.guestName}>{guestName}</span>
-        <IconX size={20} color='#BEA5A5' />
+        <IconX size={20} color='#BEA5A5' onClick={deleteGuestBook} />
       </div>
 
       <span className={classes.guestBookContents}>
@@ -22,13 +35,13 @@ const GuestBookBox = ({ guestName, contents, createdAt }) => {
       </span>
 
       <span className={classes.guestBookCreatedAt}>
-        {dayjs(createdAt).format('YYYY.MM.DD')}
+        {dayjs(createdAtToDate).format('YYYY.MM.DD')}
       </span>
     </div>
   )
 };
 
-const GuestBooks= ({ guestBooks = [] }) => {
+const GuestBooks= ({ guestBooks = [], showWriteButton = false }) => {
   const [isGuestBookWriteDrawerVisible, setIsGuestBookWriteDrawerVisible] = useState(false);
 
   return (
@@ -44,12 +57,14 @@ const GuestBooks= ({ guestBooks = [] }) => {
         ) : (
           <div className={classes.guestBooks}>
             {
-              guestBooks.map(({ id, guestName, contents, createdAt }) => (
-                <ScrollMotion key={id}>
+              guestBooks.map(({ _id, guestName, contents, createdAt, password }) => (
+                <ScrollMotion key={_id}>
                   <GuestBookBox
+                    _id={_id}
                     guestName={guestName}
                     contents={contents}
                     createdAt={createdAt}
+                    password={password}
                   />
                 </ScrollMotion>
               ))
@@ -58,15 +73,21 @@ const GuestBooks= ({ guestBooks = [] }) => {
         )
       }
 
-      <ScrollMotion>
-        <button className={classes.writeButton} onClick={() => setIsGuestBookWriteDrawerVisible(true)}>작성하기</button>
-      </ScrollMotion>
+      {
+        showWriteButton && (
+          <>
+            <ScrollMotion>
+              <button className={classes.writeButton} onClick={() => setIsGuestBookWriteDrawerVisible(true)}>작성하기</button>
+            </ScrollMotion>
 
-      <GuestBookWriteDrawer
-        key={`GuestBookWriteDrawer-${isGuestBookWriteDrawerVisible}`}
-        isOpen={isGuestBookWriteDrawerVisible}
-        onClose={() => setIsGuestBookWriteDrawerVisible(false)}
-      />
+            <GuestBookWriteDrawer
+              key={`GuestBookWriteDrawer-${isGuestBookWriteDrawerVisible}`}
+              isOpen={isGuestBookWriteDrawerVisible}
+              onClose={() => setIsGuestBookWriteDrawerVisible(false)}
+            />
+          </>
+        )
+      }
     </>
   )
 }
