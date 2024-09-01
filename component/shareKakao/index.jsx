@@ -40,6 +40,7 @@ const ShareKakao = () => {
         alt="카카오톡 공유하기 아이콘"
         width={16}
         height={16}
+        priority
       />
       카카오톡 공유하기
     </button>

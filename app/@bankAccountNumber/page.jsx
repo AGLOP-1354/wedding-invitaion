@@ -17,6 +17,7 @@ const BankAccountNumber = () => {
           <Image
             src="./images/crossFlowerSvg.svg"
             alt="마음 전하실 곳 이미지"
+            priority
             fill
           />
         </div>

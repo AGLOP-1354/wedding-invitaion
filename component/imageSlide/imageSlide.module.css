@@ -1,0 +1,45 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(35, 32, 32, 0.8);
+  width: 100vw;
+  height: 100svh;
+  z-index: 1000;
+}
+
+.ImageSlide {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.imageSlideContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100vw - 0.75rem);
+  max-width: 500px;
+  height: calc((100vw - 0.75rem) * 1.5);
+  max-height: 750px;
+}
+
+.transverseImage {
+  height: calc((100vw - 0.75rem) * 0.7149);
+}
+
+.imageTurn {
+  margin-top: 0.4rem;
+  text-align: right;
+  font-size: 0.75rem;
+  color: #ccc;
+}
+
+.arrowIcon {
+  z-index: 1001;
+  padding: 0.5rem 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}

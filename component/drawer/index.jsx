@@ -43,7 +43,6 @@ const Drawer = ({
   title,
   children,
 }) => {
-
   return (
     <>
       <motion.div

@@ -35,9 +35,9 @@
 
 .gridItem {
   position: relative;
-  width: 117.4px;
-  height: 117.4px;
-  border-radius: 10px;
+  width: 6.821875rem;
+  height: 6.821875rem;
+  border-radius: 5px;
   overflow: hidden;
   object-fit: cover;
 }

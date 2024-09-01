@@ -16,6 +16,7 @@ const SubWeddingImage2 = () => {
           <Image
             src="/images/9_R1.jpg"
             alt="서브 이미지 2"
+            priority
             fill
           />
         </div>
