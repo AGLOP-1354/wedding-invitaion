@@ -8,7 +8,7 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  height: calc((100svw - 40px) * 0.597);
+  height: calc((100svw - 40px) * 0.7171);
   border-radius: 8px;
   overflow: hidden;
 }

@@ -1,5 +1,5 @@
 .mainImageContaier {
-  border-radius: 500px 500px 0px 0px;
+  /* border-radius: 500px 500px 0px 0px; */
   overflow: hidden;
   width: 100%;
   height: calc((100svw - 40px)*1.373);

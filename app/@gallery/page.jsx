@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { IconArrowDown } from '@tabler/icons-react';
+import Image from 'next/image';
 import ScrollMotion from "@/component/scrollMotion";
 
 import classes from './page.module.css';
@@ -15,61 +15,34 @@ const Gallery = () => {
       </ScrollMotion>
 
       <div className={classes.galleryContainer}>
-        <div className={`${classes.gridItem} ${classes.img1}`}>
-          <ScrollMotion>
-            <img src="https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/gallery1.jpeg" alt="갤러리 이미지 1" />
-          </ScrollMotion>
-        </div>
+        <ScrollMotion>
+          <div className={classes.gridItem}>
+            <Image
+              src="https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/0_main_R1.jpg"
+              alt="갤러리 이미지 1"
+              fill
+              priority
+              quality={100}
+            />
+          </div>
+        </ScrollMotion>
 
-        <div className={`${classes.gridItem} ${classes.img2}`}>
-          <ScrollMotion>
-            <img src="https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/gallery5.jpeg" alt="갤러리 이미지 2" />
-          </ScrollMotion>
-        </div>
-
-        <div className={`${classes.gridItem} ${classes.img3}`}>
-          <ScrollMotion>
-            <img src="https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/gallery3.jpeg" alt="갤러리 이미지 3" />
-          </ScrollMotion>
-        </div>
-
-        <div className={`${classes.gridItem} ${classes.img4}`}>
-          <ScrollMotion>
-            <img src="https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/gallery6.jpeg" alt="갤러리 이미지 1" />
-          </ScrollMotion>
-        </div>
-
-        <div className={`${classes.gridItem} ${classes.img5}`}>
-          <ScrollMotion>
-            <img src="https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/gallery8.jpeg" alt="갤러리 이미지 1" />
-          </ScrollMotion>
-        </div>
-
-        <div className={`${classes.gridItem} ${classes.img6}`}>
-          <ScrollMotion>
-            <img src="https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/gallery2.jpeg" alt="갤러리 이미지 1" />
-          </ScrollMotion>
-        </div>
-
-        <div className={`${classes.gridItem} ${classes.img7}`}>
-          <ScrollMotion>
-            <img src="https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/gallery3.jpeg" alt="갤러리 이미지 1" />
-          </ScrollMotion>
-        </div>
-
-        <div className={`${classes.gridItem} ${classes.img8}`}>
-          <ScrollMotion>
-            <img src="https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/gallery4.jpeg" alt="갤러리 이미지 1" />
-          </ScrollMotion>
-        </div>
+        {
+          new Array(29).fill(undefined).map((_, index) => (
+            <ScrollMotion  key={index + 1}>
+              <div className={classes.gridItem}>
+                <Image
+                  src={`https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/${index+1}_R1.jpg`}
+                  alt={`갤러리 이미지 ${index + 1}`}
+                  fill
+                  priority
+                  quality={100}
+                />
+              </div>
+            </ScrollMotion>
+          ))
+        }
       </div>
-
-      <ScrollMotion>
-        <button className={classes.moreGallery}>
-          <IconArrowDown color='#BEA5A5' size='1rem' />
-          사진 더 보기
-        </button>
-      </ScrollMotion>
     </section>
   );
 };

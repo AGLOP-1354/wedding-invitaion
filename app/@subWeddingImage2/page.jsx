@@ -14,7 +14,7 @@ const SubWeddingImage2 = () => {
       <ScrollMotion>
         <div className={classes.image}>
           <Image
-            src="/images/subImage2.jpeg"
+            src="/images/9_R1.jpg"
             alt="서브 이미지 2"
             fill
           />

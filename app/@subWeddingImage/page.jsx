@@ -63,7 +63,7 @@ const SubWeddingImage = () => {
         <ScrollMotion>
           <img
             className={classess.image}
-            src="https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/temp_sub_wedding_image.jpeg"
+            src="/images/20_R1.jpg"
             alt="김태현, 김기현의 웨딩 사진 중 서브이미지"
           />
         </ScrollMotion>
