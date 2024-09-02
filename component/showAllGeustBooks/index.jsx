@@ -18,25 +18,22 @@ const ShowAllGuestBooks = ({ guestBooks }) => {
         onClick={() => setIsDrawerOpen(true)}
       >
         모두 보기
-
-        <IconChevronRight size={16} color='#BEA5A5' />
+        <IconChevronRight size={16} color="#BEA5A5" />
       </button>
 
-      {
-        isDrawerOpen && (
-          <Drawer
-            isOpen={isDrawerOpen}
-            onClose={() => setIsDrawerOpen(false)}
-            title="방명록 모두 보기"
-          >
-            <div className={classes.container}>
-              <GuestBooks guestBooks={guestBooks} />
-            </div>
-          </Drawer>
-        )
-      }
+      {isDrawerOpen && (
+        <Drawer
+          isOpen={isDrawerOpen}
+          onClose={() => setIsDrawerOpen(false)}
+          title="방명록 모두 보기"
+        >
+          <div className={classes.container}>
+            <GuestBooks guestBooks={guestBooks} />
+          </div>
+        </Drawer>
+      )}
     </section>
   );
-}
+};
 
 export default ShowAllGuestBooks;

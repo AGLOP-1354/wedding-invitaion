@@ -13,7 +13,7 @@ const gowunBatang = Gowun_Batang({
 export const metadata = {
   title: '김태현 & 김기현 결혼합니다.',
   description: '2024.10.12(토) 17:00 고려대학교 교우회관 1층 고려스퀘어홀',
-  url: 'https://taehyun-kihyun.love',
+  url: 'https://wwww.taehyun-kihyun.love',
   ogImage: '/images/opengraph.jpg',
 };
 

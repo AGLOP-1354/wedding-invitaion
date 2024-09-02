@@ -8,18 +8,16 @@ import ScrollMotion from '@/component/scrollMotion';
 import Drawer from '@/component/drawer';
 import Divider from '@/component/divider';
 
-import {
-  GROOM_FAMILY, BRIDE_FAMILY
-} from '@/constants/family';
+import { GROOM_FAMILY, BRIDE_FAMILY } from '@/constants/family';
 
 import classess from './page.module.css';
 
 const CallRaw = ({ position, name, phoneNumber }) => {
   const handleCall = () => {
-    window.location.href = `tel:+${phoneNumber}`;
+    window.location.href = `tel:${phoneNumber}`;
   };
   const handleSMS = () => {
-    window.location.href = `sms:+${phoneNumber}`;
+    window.location.href = `sms:${phoneNumber}`;
   };
 
   return (
@@ -29,15 +27,15 @@ const CallRaw = ({ position, name, phoneNumber }) => {
 
       <div className={classess.calls}>
         <span className={classess.callPhone} onClick={handleCall}>
-          <IconPhoneFilled color='#BEA5A5' size={20} />
+          <IconPhoneFilled color="#BEA5A5" size={20} />
         </span>
         <span className={classess.callMessage} onClick={handleSMS}>
-          <IconMessageCircleFilled color='#BEA5A5' size={20} />
+          <IconMessageCircleFilled color="#BEA5A5" size={20} />
         </span>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const CallBox = ({ familyInfos }) => {
   return (
@@ -51,9 +49,8 @@ const CallBox = ({ familyInfos }) => {
         />
       ))}
     </div>
-  )
+  );
 };
-
 
 const SubWeddingImage = () => {
   const [isCallDrawerOpened, setIsCallDrawerOpened] = useState(false);
@@ -71,16 +68,23 @@ const SubWeddingImage = () => {
 
       <div className={classess.parentAndChildNames}>
         <ScrollMotion>
-          <div className={classess.parentAndChildName}>김윤호 ∙ 안현주 <span className={classess.by}>의 장남</span> 태현</div>
+          <div className={classess.parentAndChildName}>
+            김윤호 ∙ 안현주 <span className={classess.by}>의 장남</span> 태현
+          </div>
         </ScrollMotion>
         <ScrollMotion>
-          <div className={classess.parentAndChildName}>김진한 ∙ 김은자 <span className={classess.by}>의 장녀</span> 기현</div>
+          <div className={classess.parentAndChildName}>
+            김진한 ∙ 김은자 <span className={classess.by}>의 장녀</span> 기현
+          </div>
         </ScrollMotion>
       </div>
 
       <ScrollMotion>
-        <button className={classess.callButton} onClick={() => setIsCallDrawerOpened(true)}>
-          <IconPhoneFilled color='#BEA5A5' size='1rem' />
+        <button
+          className={classess.callButton}
+          onClick={() => setIsCallDrawerOpened(true)}
+        >
+          <IconPhoneFilled color="#BEA5A5" size="1rem" />
           연락하기
         </button>
       </ScrollMotion>
@@ -97,7 +101,7 @@ const SubWeddingImage = () => {
         </div>
       </Drawer>
     </section>
-  )
-}
+  );
+};
 
 export default SubWeddingImage;
