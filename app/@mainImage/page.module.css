@@ -1,13 +1,15 @@
 .mainImageContaier {
   /* border-radius: 500px 500px 0px 0px; */
+  /* border-top-left-radius: 200px;
+  border-top-right-radius: 200px; */
+  /* border-top-left-radius: 50px;
+  border-top-right-radius: 50px; */
+
+  border-radius: 20px;
   overflow: hidden;
   width: 100%;
-  height: calc((100svw - 40px)*1.373);
   position: relative;
-  margin: 46px auto 0;
+  margin: 60px auto 0;
   max-width: 500px;
-
-  @media (min-width: 768px) {
-    height: calc(500px * 1.373);
-  }
+  aspect-ratio: 4 / 6;
 }

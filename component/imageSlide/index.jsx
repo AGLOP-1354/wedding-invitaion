@@ -25,33 +25,34 @@ const ImageSlide = ({
   isOpen,
   selectedImageIndex = 0,
   setSelectedImageIndex,
-  onClose
+  onClose,
 }) => {
-  const selectedImageSrc = selectedImageIndex === 0
-  ? 'https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/0_main_R1.jpg'
-  : `https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/${selectedImageIndex}_R1.jpg`;
+  const selectedImageSrc =
+    selectedImageIndex === 0
+      ? 'https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/0_main_R1.jpg'
+      : `https://link-dropper-bucket.s3.ap-northeast-2.amazonaws.com/${selectedImageIndex}_R1.jpg`;
 
   const imageClassName = TRANSVERSE_IMAGE_INDEXES.includes(selectedImageIndex)
     ? classes.transverseImage
     : '';
 
   const onClickPrevButton = () => {
-    if (selectedImageIndex === 1) {
-      setSelectedImageIndex(30);
+    if (selectedImageIndex === 0) {
+      setSelectedImageIndex(29);
       return;
     }
 
     setSelectedImageIndex(selectedImageIndex - 1);
-  }
+  };
 
   const onClickNextButton = () => {
-    if (selectedImageIndex === 30) {
-      setSelectedImageIndex(1);
+    if (selectedImageIndex === 29) {
+      setSelectedImageIndex(0);
       return;
     }
 
     setSelectedImageIndex(selectedImageIndex + 1);
-  }
+  };
 
   return (
     <>
@@ -66,7 +67,7 @@ const ImageSlide = ({
         <div className={`${classes.imageSlideContainer} ${imageClassName}`}>
           <IconChevronLeft
             size={32}
-            color='#fff'
+            color="#fff"
             className={classes.arrowIcon}
             onClick={onClickPrevButton}
           />
@@ -78,7 +79,7 @@ const ImageSlide = ({
           />
           <IconChevronRight
             size={32}
-            color='#fff'
+            color="#fff"
             className={classes.arrowIcon}
             onClick={onClickNextButton}
           />
@@ -86,7 +87,7 @@ const ImageSlide = ({
         <div className={classes.imageTurn}>{selectedImageIndex + 1} of 30</div>
       </article>
     </>
-  )
+  );
 };
 
 export default ImageSlide;

@@ -7,8 +7,12 @@
 
 .image {
   position: relative;
-  width: 10.625rem;
-  height: 15.625rem;
+  /* width: 10.625rem;
+  height: 15.625rem; */
+
+  aspect-ratio: 12 /18;
+  width: 18rem;
+  border-radius: 120px;
   border-radius: 80px;
   overflow: hidden;
 }

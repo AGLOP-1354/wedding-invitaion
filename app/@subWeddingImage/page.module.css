@@ -11,6 +11,7 @@
   height: calc((100svw - 40px) * 0.7171);
   border-radius: 8px;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .image {
@@ -47,9 +48,9 @@
   align-items: center;
   gap: 8px;
   border-radius: 30px;
-  border: 1px solid #E7E0E0;
-  background: #FFF;
-  color: #BEA5A5;
+  border: 1px solid #e7e0e0;
+  background: #fff;
+  color: #bea5a5;
   font-size: 1rem;
   line-height: 1.75rem;
   max-width: 300px;
@@ -105,5 +106,5 @@
 .callMessage {
   padding: 0.5rem;
   border-radius: 8px;
-  background: #F7F3F2;
+  background: #f7f3f2;
 }
