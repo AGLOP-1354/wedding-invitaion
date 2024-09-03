@@ -13,8 +13,14 @@ const gowunBatang = Gowun_Batang({
 export const metadata = {
   title: '김태현 & 김기현 결혼합니다.',
   description: '2024.10.12(토) 17:00 고려대학교 교우회관 1층 고려스퀘어홀',
-  url: 'https://wwww.taehyun-kihyun.love',
-  ogImage: '/images/opengraph.jpg',
+  metadataBase: new URL('https://taehyun-kihyun.love/'),
+  openGraph: {
+    siteName: '김태현 & 김기현 모바일청첩장',
+    title: '김태현 & 김기현 결혼합니다.',
+    description: '2024.10.12(토) 17:00 고려대학교 교우회관 1층 고려스퀘어홀',
+    images: '/opengraph-image.jpg',
+    url: 'https://taehyun-kihyun.love/',
+  },
 };
 
 export default function RootLayout({
@@ -58,16 +64,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, user-scalable=no"
-        />
-        <meta property="og:title" content={metadata.title} />
-        <meta property="og:description" content={metadata.description} />
-        <meta property="og:url" content={metadata.url} />
-        <meta property="og:image" content={metadata.ogImage} />
-      </head>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=no"
+      />
       <body className={gowunBatang.className}>
         <Toaster position="top-center" />
         <div className={classes.layout}>{floatingPopper}</div>
