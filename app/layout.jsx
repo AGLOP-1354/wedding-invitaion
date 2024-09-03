@@ -4,6 +4,7 @@ import classes from './layout.module.css';
 import 'reset-css';
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
+import Head from 'next/head';
 
 const gowunBatang = Gowun_Batang({
   weight: ['400', '700'],
@@ -13,7 +14,6 @@ const gowunBatang = Gowun_Batang({
 export const metadata = {
   title: '김태현 & 김기현 결혼합니다.',
   description: '2024.10.12(토) 17:00 고려대학교 교우회관 1층 고려스퀘어홀',
-  metadataBase: new URL('https://taehyun-kihyun.love/'),
   openGraph: {
     siteName: '김태현 & 김기현 모바일청첩장',
     title: '김태현 & 김기현 결혼합니다.',
@@ -64,10 +64,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, user-scalable=no"
-      />
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no"
+        />
+        <meta property="og:title" content="김태현 & 김기현 결혼합니다" />
+        <meta property="og:site_name" content="김태현 & 김기현 모바일 청첩장" />
+        <meta property="og:url" content="https://taehyun-kihyun.love" />
+        <meta
+          property="og:description"
+          content="2024.10.12(토) 17:00 고려대학교 교우회관 1층 고려스퀘어홀"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/opengraph-image.jpg" />
+      </Head>
+
       <body className={gowunBatang.className}>
         <Toaster position="top-center" />
         <div className={classes.layout}>{floatingPopper}</div>
