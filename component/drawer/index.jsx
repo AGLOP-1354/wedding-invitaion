@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { IconX } from '@tabler/icons-react';
 
@@ -43,6 +44,16 @@ const Drawer = ({
   title,
   children,
 }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflowY = 'hidden';
+    }
+
+    return () => {
+      document.body.style.overflowY = 'auto';
+    }
+  }, [isOpen]);
+
   return (
     <>
       <motion.div
