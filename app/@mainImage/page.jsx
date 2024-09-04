@@ -12,7 +12,7 @@ const MainImage = () => {
         fill
         priority
         quality={100}
-        blurDataURL="/images/0_main_R1.jpg"
+        blurDataURL="/images/0_main_R1_placeholder.jpg"
         placeholder="blur"
       />
     </div>
