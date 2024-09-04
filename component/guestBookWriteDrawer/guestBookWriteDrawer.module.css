@@ -8,6 +8,23 @@
   position: relative;
 }
 
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-5px);
+  }
+}
+
+.textAnimate span {
+  display: inline-block;
+  animation: waviy 1s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
 .formItmes {
   display: flex;
   flex-direction: column;

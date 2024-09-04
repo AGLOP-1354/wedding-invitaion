@@ -53,9 +53,30 @@ const GuestBookWriteDrawer = ({ isOpen, onClose }) => {
               left: '50%',
               transform: 'translateX(-50%)',
               zIndex: 1004,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '16px',
             }}
           >
-            <ClipLoader color="#bea5a5" />
+            <div>
+              <ClipLoader color="#bea5a5" />
+            </div>
+            <div className={classes.textAnimate} style={{ fontSize: '14px' }}>
+              {/* 조금만 기다려주세요..🙏 */}
+              <span style={{ '--i': 1 }}>조</span>
+              <span style={{ '--i': 2 }}>금</span>
+              <span style={{ '--i': 3, marginRight: '4px' }}>만</span>
+              <span style={{ '--i': 4 }}>기</span>
+              <span style={{ '--i': 5 }}>다</span>
+              <span style={{ '--i': 6 }}>려</span>
+              <span style={{ '--i': 7 }}>주</span>
+              <span style={{ '--i': 8 }}>세</span>
+              <span style={{ '--i': 9 }}>요</span>
+              <span style={{ '--i': 10 }}>.</span>
+              <span style={{ '--i': 11, marginRight: '1px' }}>.</span>
+              <span style={{ '--i': 12 }}>🙏</span>
+            </div>
           </div>
         )}
         <form
