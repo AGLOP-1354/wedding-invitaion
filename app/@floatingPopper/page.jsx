@@ -26,14 +26,26 @@ const FloatingPopper = () => {
     setIsMobile(mobileCheck);
   }, []);
 
+  // const warning = <div>
+  //   <div>PC환경은 최적화가 안되어 있습니다😭</div>
+  //   <div>P모바일 환경에서 봐주시면 감사드리겠습니다🙏</div>
+  // </div>
   useEffect(() => {
     if (isMobile) return;
 
     toast(
-      'PC환경은 최적화가 안되어 있습니다😭 모바일 환경에서 봐주시면 감사드리겠습니다🙏',
+      <div style={{ fontWeight: 700 }}>
+        PC 환경은 최적화가 안되어 있습니다😭
+        <br />
+        모바일 환경에서 봐주시면 감사드리겠습니다🙏
+      </div>,
       {
-        icon: '⚠️',
-        duration: 10000,
+        duration: 5000,
+        style: {
+          padding: '40px',
+          backgroundColor: '#f7f3f2',
+          marginTop: '300px',
+        },
       }
     );
   }, [isMobile]);
