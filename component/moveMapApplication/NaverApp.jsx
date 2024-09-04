@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from 'next/image';
 import NaverMapIcon from '@/public/images/naverMapIcon.webp';
 
@@ -7,8 +7,8 @@ import classes from './moveMapApplication.module.css';
 const NaverApp = () => {
   const handleOpenNaverMap = () => {
     const location = {
-      lat: 37.5921715705443,
-      lng: 127.035334111518,
+      lat: 37.5919972,
+      lng: 127.035654,
     };
 
     const naverMapAppUrl = `nmap://place?lat=${location.lat}&lng=${location.lng}&name=서울시 성북구 종암로 13`;

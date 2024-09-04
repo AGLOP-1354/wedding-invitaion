@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import ScrollMotion from "@/component/scrollMotion";
+import ScrollMotion from '@/component/scrollMotion';
 
 import Subway from '@/component/location/subway';
 import Bus from '@/component/location/bus';
@@ -24,12 +24,12 @@ const LocationDetail = () => {
 
     script.onload = () => {
       const map = new naver.maps.Map('map', {
-        center: new naver.maps.LatLng(37.5921715705443, 127.035334111518),
+        center: new naver.maps.LatLng(37.5919972, 127.035654),
         zoom: 17,
       });
 
       const marker = new naver.maps.Marker({
-        position: new naver.maps.LatLng(37.5921715705443, 127.035334111518),
+        position: new naver.maps.LatLng(37.5919972, 127.035654),
         map: map,
       });
     };
@@ -57,7 +57,9 @@ const LocationDetail = () => {
 
       <ScrollMotion>
         <div className={classes.header}>
-          <span className={classes.locationDetail}>고려대학교 교우회관 1층 고려스퀘어홀</span>
+          <span className={classes.locationDetail}>
+            고려대학교 교우회관 1층 고려스퀘어홀
+          </span>
           <span className={classes.location}>서울시 성북구 종암로 13</span>
         </div>
       </ScrollMotion>
@@ -82,7 +84,7 @@ const LocationDetail = () => {
         <Car />
       </ScrollMotion>
     </section>
-  )
-}
+  );
+};
 
 export default LocationDetail;

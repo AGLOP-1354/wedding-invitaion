@@ -33,7 +33,6 @@ const dropdownVariants = {
 
 const BankAccountRaw = ({ position, name, bank, bankNumber, isLastItem }) => {
   const handleCopyBankAccountNumber = async () => {
-    console.log('test');
     toast.success(`${position} ${name}님의 계좌가 복사되었습니다.`, {
       duration: 3000,
     });

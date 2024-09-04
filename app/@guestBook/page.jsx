@@ -14,8 +14,6 @@ const GuestBook = async () => {
     (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
   );
 
-  console.log({ guestBooks });
-
   const parsedGuestBook =
     sortedGuestBooks.length === 0 ? [] : sortedGuestBooks.slice(0, 4);
 

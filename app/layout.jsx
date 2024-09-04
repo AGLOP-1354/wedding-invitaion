@@ -95,11 +95,11 @@ export default function RootLayout({
 
         <article className={classes.layout}>{gallery}</article>
 
-        <article className={classes.layout}>{locationDetail}</article>
-
         <article className={classes.layout}>{bankAccountNumber}</article>
 
         <article className={classes.layout}>{guestBook}</article>
+
+        <article className={classes.layout}>{locationDetail}</article>
 
         <article className={classes.layout}>{subWeddingImage2}</article>
 
