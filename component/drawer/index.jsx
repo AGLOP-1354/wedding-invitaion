@@ -38,20 +38,15 @@ const overlayVariants = {
   },
 };
 
-const Drawer = ({
-  isOpen,
-  onClose,
-  title,
-  children,
-}) => {
+const Drawer = ({ isOpen, onClose, title, children }) => {
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflowY = 'hidden';
+      document.body.style.overflow = 'hidden';
     }
 
     return () => {
-      document.body.style.overflowY = 'auto';
-    }
+      document.body.style.overflow = 'auto';
+    };
   }, [isOpen]);
 
   return (
@@ -73,12 +68,10 @@ const Drawer = ({
           <IconX color="#BEA5A5" size={20} onClick={onClose} />
         </header>
 
-        <article className={classes.article}>
-          {children}
-        </article>
+        <article className={classes.article}>{children}</article>
       </motion.div>
     </>
-  )
-}
+  );
+};
 
 export default Drawer;

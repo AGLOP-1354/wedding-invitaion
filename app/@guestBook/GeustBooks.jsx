@@ -9,6 +9,7 @@ import GuestBookWriteDrawer from '@/component/guestBookWriteDrawer';
 import deleteGuestBookById from '@/libs/deleteGeustBookById';
 
 import classes from './page.module.css';
+import ShowAllGuestBooks from '@/component/showAllGeustBooks';
 
 const GuestBookBox = ({ _id, guestName, contents, createdAt, password }) => {
   const createdAtToDate =
@@ -40,12 +41,43 @@ const GuestBookBox = ({ _id, guestName, contents, createdAt, password }) => {
   );
 };
 
-const GuestBooks = ({ guestBooks = [], showWriteButton = false }) => {
+const GuestBooks = ({
+  guestBooks = [],
+  showWriteButton = false,
+  showViewAllButton = true,
+}) => {
   const [isGuestBookWriteDrawerVisible, setIsGuestBookWriteDrawerVisible] =
     useState(false);
 
   return (
     <>
+      {showWriteButton && (
+        <>
+          <ScrollMotion>
+            <button
+              className={classes.writeButton}
+              onClick={() => setIsGuestBookWriteDrawerVisible(true)}
+            >
+              방명록 작성하기
+            </button>
+          </ScrollMotion>
+
+          <GuestBookWriteDrawer
+            key={`GuestBookWriteDrawer-${isGuestBookWriteDrawerVisible}`}
+            isOpen={isGuestBookWriteDrawerVisible}
+            onClose={() => setIsGuestBookWriteDrawerVisible(false)}
+          />
+        </>
+      )}
+
+      {showViewAllButton && (
+        <div className={classes.subHeader}>
+          <ScrollMotion>
+            <ShowAllGuestBooks guestBooks={guestBooks} />
+          </ScrollMotion>
+        </div>
+      )}
+
       {guestBooks?.length === 0 ? (
         <ScrollMotion>
           <div
@@ -76,25 +108,6 @@ const GuestBooks = ({ guestBooks = [], showWriteButton = false }) => {
             )
           )}
         </div>
-      )}
-
-      {showWriteButton && (
-        <>
-          <ScrollMotion>
-            <button
-              className={classes.writeButton}
-              onClick={() => setIsGuestBookWriteDrawerVisible(true)}
-            >
-              작성하기
-            </button>
-          </ScrollMotion>
-
-          <GuestBookWriteDrawer
-            key={`GuestBookWriteDrawer-${isGuestBookWriteDrawerVisible}`}
-            isOpen={isGuestBookWriteDrawerVisible}
-            onClose={() => setIsGuestBookWriteDrawerVisible(false)}
-          />
-        </>
       )}
     </>
   );

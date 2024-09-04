@@ -1,9 +1,9 @@
-import ScrollMotion from "@/component/scrollMotion";
-import ShowAllGuestBooks from "@/component/showAllGeustBooks";
+import ScrollMotion from '@/component/scrollMotion';
+// import ShowAllGuestBooks from '@/component/showAllGeustBooks';
 
 import getGuestBooks from '@/libs/getGuestBooks';
 
-import GuestBooks from "./GeustBooks";
+import GuestBooks from './GeustBooks';
 
 import classes from './page.module.css';
 
@@ -21,17 +21,17 @@ const GuestBook = async () => {
         </div>
       </ScrollMotion>
 
-      <div className={classes.subHeader}>
+      {/* <div className={classes.subHeader}>
         <ScrollMotion>
           <ShowAllGuestBooks guestBooks={guestBooks} />
         </ScrollMotion>
-      </div>
+      </div> */}
 
       <div className={classes.container}>
         <GuestBooks guestBooks={parsedGuestBook} showWriteButton />
       </div>
     </section>
-  )
+  );
 };
 
 export default GuestBook;
