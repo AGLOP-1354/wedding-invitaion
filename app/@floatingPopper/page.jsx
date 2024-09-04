@@ -35,7 +35,11 @@ const FloatingPopper = () => {
         }}
       />
 
-      <div className={classes.PopperTriggerButton} onClick={fireConfetti}>
+      <div
+        id="popper-trigger-element"
+        className={classes.PopperTriggerButton}
+        onClick={fireConfetti}
+      >
         <div className={classes.emoji}>🥳</div>
         <div
           className={animate ? classes.overlayWithAnimation : classes.overlay}

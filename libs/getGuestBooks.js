@@ -3,11 +3,11 @@ import getDefaultUrl from '@/utils/getDefaultUrl';
 const getGuestBooks = async () => {
   const defaultUrl = getDefaultUrl();
 
-;  const response = await fetch(`${defaultUrl}/api/guest-book`, {
+  const response = await fetch(`${defaultUrl}/api/guest-book`, {
     method: 'GET',
     cache: 'no-cache',
     next: {
-      tags: ['allGuestBooks']
+      tags: ['allGuestBooks'],
     },
   });
 
@@ -16,6 +16,7 @@ const getGuestBooks = async () => {
   }
 
   const result = await response.json();
+
   return result;
 };
 

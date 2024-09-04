@@ -43,6 +43,7 @@ const GuestBookBox = ({ _id, guestName, contents, createdAt, password }) => {
 
 const GuestBooks = ({
   guestBooks = [],
+  allGuestBooks = [],
   showWriteButton = false,
   showViewAllButton = true,
 }) => {
@@ -68,14 +69,6 @@ const GuestBooks = ({
             onClose={() => setIsGuestBookWriteDrawerVisible(false)}
           />
         </>
-      )}
-
-      {showViewAllButton && (
-        <div className={classes.subHeader}>
-          <ScrollMotion>
-            <ShowAllGuestBooks guestBooks={guestBooks} />
-          </ScrollMotion>
-        </div>
       )}
 
       {guestBooks?.length === 0 ? (
@@ -107,6 +100,14 @@ const GuestBooks = ({
               </ScrollMotion>
             )
           )}
+        </div>
+      )}
+
+      {showViewAllButton && (
+        <div className={classes.subHeader}>
+          <ScrollMotion>
+            <ShowAllGuestBooks guestBooks={allGuestBooks} />
+          </ScrollMotion>
         </div>
       )}
     </>

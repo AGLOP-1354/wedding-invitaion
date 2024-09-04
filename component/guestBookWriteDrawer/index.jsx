@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import writeGuestBook from '@/libs/writeGuestBook';
+import { toast } from 'react-hot-toast';
 
 import SubmitButton from './SubmitButton';
 import Drawer from '../drawer';
@@ -28,6 +29,16 @@ const GuestBookWriteDrawer = ({ isOpen, onClose }) => {
 
     setErrors({});
     await writeGuestBook(formData);
+
+    const guestName = formData.get('guestName');
+
+    toast.success(`🙇🏻‍♂️ ${guestName}님 감사합니다 🙇🏻‍♀️`, {
+      duration: 3000,
+      icon: null,
+    });
+
+    const popperElement = document.querySelector('#popper-trigger-element');
+    if (popperElement) popperElement.click();
 
     setLoading(false);
     onClose();

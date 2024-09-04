@@ -10,7 +10,14 @@ import classes from './page.module.css';
 const GuestBook = async () => {
   const { result: guestBooks = [] } = await getGuestBooks();
 
-  const parsedGuestBook = guestBooks.length === 0 ? [] : guestBooks.slice(0, 4);
+  const sortedGuestBooks = guestBooks.sort(
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+  );
+
+  console.log({ guestBooks });
+
+  const parsedGuestBook =
+    sortedGuestBooks.length === 0 ? [] : sortedGuestBooks.slice(0, 4);
 
   return (
     <section className={classes.GuestBook}>
@@ -28,7 +35,11 @@ const GuestBook = async () => {
       </div> */}
 
       <div className={classes.container}>
-        <GuestBooks guestBooks={parsedGuestBook} showWriteButton />
+        <GuestBooks
+          allGuestBooks={sortedGuestBooks}
+          guestBooks={parsedGuestBook}
+          showWriteButton
+        />
       </div>
     </section>
   );
