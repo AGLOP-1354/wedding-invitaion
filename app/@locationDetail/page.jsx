@@ -26,6 +26,10 @@ const LocationDetail = () => {
       const map = new naver.maps.Map('map', {
         center: new naver.maps.LatLng(37.5919972, 127.035654),
         zoom: 17,
+        scrollWheel: false, // 스크롤 비활성화
+        // draggable: false, // 드래그 비활성화
+        disableDoubleClickZoom: true, // 더블 클릭 줌 비활성화
+        pinchZoom: false, // 터치 핀치 줌 비활성화 (모바일)
       });
 
       const marker = new naver.maps.Marker({

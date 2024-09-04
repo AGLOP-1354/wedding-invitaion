@@ -13,7 +13,7 @@
 }
 
 .subTitle {
-  color: #CAB4B4;
+  color: #cab4b4;
   font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 1.68px;
@@ -51,6 +51,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #F7F3F2;
+  background: #f7f3f2;
   height: 52px;
+
+  user-select: none; /* 텍스트 선택 금지 */
+  -webkit-user-drag: none;
 }
