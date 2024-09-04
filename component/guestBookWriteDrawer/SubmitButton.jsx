@@ -1,14 +1,19 @@
 'use client';
 
-// import { useFormState } from 'react-dom';
+import { useFormStatus } from 'react-dom';
 
 import classes from './guestBookWriteDrawer.module.css';
+import { useEffect } from 'react';
 
-const SubmitButton = ({ loading }) => {
-  // const { pending } = useFormState();
+const SubmitButton = ({ loading, setLoading }) => {
+  const { pending } = useFormStatus();
+
+  useEffect(() => {
+    setLoading(pending);
+  }, [pending, setLoading]);
 
   return (
-    <button disabled={loading} type="submit" className={classes.SubmitButton}>
+    <button disabled={pending} type="submit" className={classes.SubmitButton}>
       {loading ? '저장중...' : '작성하기'}
     </button>
   );

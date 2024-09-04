@@ -15,7 +15,6 @@ const GuestBookWriteDrawer = ({ isOpen, onClose }) => {
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (formData) => {
-    setLoading(true);
     const hasGuestName = !!formData.get('guestName');
     const hasPassword = !!formData.get('password');
     const hasContents = !!formData.get('contents');
@@ -40,8 +39,6 @@ const GuestBookWriteDrawer = ({ isOpen, onClose }) => {
 
     const popperElement = document.querySelector('#popper-trigger-element');
     if (popperElement) popperElement.click();
-    setLoading(false);
-
     onClose();
   };
 
@@ -117,7 +114,7 @@ const GuestBookWriteDrawer = ({ isOpen, onClose }) => {
             </p>
           </div>
 
-          <SubmitButton loading={loading} />
+          <SubmitButton loading={loading} setLoading={setLoading} />
         </form>
       </div>
     </Drawer>

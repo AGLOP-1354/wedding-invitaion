@@ -60,6 +60,7 @@
 }
 
 .SubmitButton {
+  margin-top: 20px;
   height: 3.25rem;
   padding: 0 1.25rem;
   border-radius: 8px;
