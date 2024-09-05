@@ -93,7 +93,7 @@ const FloatingPopper = () => {
           animate ? classes.GuideFloating : classes.GuideFloatingUnvisible
         }
       >
-        👈 터치해보세요
+        👈 눌러보세요!
       </div>
     </>
   );
