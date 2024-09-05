@@ -58,6 +58,7 @@ const GuestBooks = ({
             <button
               className={classes.writeButton}
               onClick={() => setIsGuestBookWriteDrawerVisible(true)}
+              style={{ fontWeight: 700, fontSize: '18px' }}
             >
               방명록 작성하기
             </button>
