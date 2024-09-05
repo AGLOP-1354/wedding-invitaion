@@ -62,30 +62,40 @@ const FloatingPopper = () => {
   };
 
   return (
-    <div className={classes.FloatingPopper}>
-      <Confetti
-        onInit={handleInit}
-        style={{
-          position: 'fixed',
-          width: '100%',
-          height: '100%',
-          top: 50,
-          left: 0,
-          pointerEvents: 'none',
-        }}
-      />
+    <>
+      <div className={classes.FloatingPopper}>
+        <Confetti
+          onInit={handleInit}
+          style={{
+            position: 'fixed',
+            width: '100%',
+            height: '100%',
+            top: 50,
+            left: 0,
+            pointerEvents: 'none',
+          }}
+        />
+
+        <div
+          id="popper-trigger-element"
+          className={classes.PopperTriggerButton}
+          onClick={fireConfetti}
+        >
+          <div className={classes.emoji}>🥳</div>
+          <div
+            className={animate ? classes.overlayWithAnimation : classes.overlay}
+          />
+        </div>
+      </div>
 
       <div
-        id="popper-trigger-element"
-        className={classes.PopperTriggerButton}
-        onClick={fireConfetti}
+        className={
+          animate ? classes.GuideFloating : classes.GuideFloatingUnvisible
+        }
       >
-        <div className={classes.emoji}>🥳</div>
-        <div
-          className={animate ? classes.overlayWithAnimation : classes.overlay}
-        />
+        👈 터치해보세요
       </div>
-    </div>
+    </>
   );
 };
 

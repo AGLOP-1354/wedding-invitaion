@@ -21,6 +21,45 @@
   cursor: pointer;
 }
 
+/* .shake {
+  animation: shake 2s ease infinite;
+} */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-3px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+.GuideFloating {
+  position: fixed;
+  left: 64px;
+  top: 117px;
+  z-index: 1000;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  animation: shake 6s ease infinite;
+}
+
+.GuideFloatingUnvisible {
+  display: none;
+}
+
 @keyframes ping {
   75%,
   100% {
