@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import writeGuestBook from '@/libs/writeGuestBook';
 import { toast } from 'react-hot-toast';
 
@@ -13,6 +13,24 @@ import classes from './guestBookWriteDrawer.module.css';
 const GuestBookWriteDrawer = ({ isOpen, onClose }) => {
   const [erros, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const viewportMetaTag = document.querySelector('meta[name="viewport"]');
+
+    if (isOpen) {
+      viewportMetaTag.setAttribute(
+        'content',
+        'width=device-width, initial-scale=1, user-scalable=no'
+      );
+
+      return;
+    }
+
+    viewportMetaTag.setAttribute(
+      'content',
+      'width=device-width, initial-scale=1, user-scalable=yes'
+    );
+  }, [isOpen]);
 
   const onSubmit = async (formData) => {
     const hasGuestName = !!formData.get('guestName');
